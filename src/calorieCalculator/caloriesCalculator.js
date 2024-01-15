@@ -191,7 +191,7 @@ const CaloriesCalculator = () => {
             <div>
               <input
                 type="text"
-                placeholder="Buscar alimento"
+                placeholder="Buscar"
                 onChange={(e) => searchFoodEdamam(e.target.value)}
               />
               <ul>
