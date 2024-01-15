@@ -1,5 +1,5 @@
+import ReactRefresh from '@vitejs/plugin-react-refresh';
 import { defineConfig } from 'vite';
-import glob from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 
@@ -9,11 +9,14 @@ export default defineConfig(({ command }) => {
       [command === 'serve' ? 'global' : '_global']: {},
     },
     root: 'src',
+    plugins: [ReactRefresh(), injectHTML(), FullReload(['./src/**/**.html'])],
     build: {
       sourcemap: true,
-
+      outDir: '../dist',
       rollupOptions: {
-        input: glob.sync('./src/*.html'),
+        input: {
+          main: './calorieCalculator/index.jsx',
+        },
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
@@ -23,8 +26,9 @@ export default defineConfig(({ command }) => {
           entryFileNames: 'commonHelpers.js',
         },
       },
-      outDir: '../dist',
     },
-    plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
+    optimizeDeps: {
+      include: ['react', 'react-dom'], // Añade otras dependencias si las necesitas
+    },
   };
 });
