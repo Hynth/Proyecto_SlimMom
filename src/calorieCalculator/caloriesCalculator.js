@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { FoodDatabaseClient } from 'edamam-api';
-import logoDesk from '../images/logo-desk.svg';
-import leavesImage from '../images/Laves-calculator-desk.png';
 import '../css/stylesCalories.css';
 import 'react-datetime/css/react-datetime.css';
 
@@ -19,7 +17,7 @@ const CaloriesCalculator = () => {
     setCurrentDate(today.toLocaleDateString());
   }, []);
 
-  const handleInputChange = (labelFor) => {
+  const handleInputChange = labelFor => {
     setActiveLabel(labelFor);
   };
 
@@ -27,7 +25,7 @@ const CaloriesCalculator = () => {
     setActiveLabel(null);
   };
 
-  const handlePageChange = (page) => {
+  const handlePageChange = page => {
     setCurrentPage(page);
   };
 
@@ -36,7 +34,7 @@ const CaloriesCalculator = () => {
     appKey: '95e35ffe56125b87c53b65c5748a4314',
   });
 
-  const searchFoodEdamam = async (query) => {
+  const searchFoodEdamam = async query => {
     try {
       const response = await fetch(`/api/food?q=${query}`);
       const data = await response.json();
@@ -49,7 +47,7 @@ const CaloriesCalculator = () => {
     }
   };
 
-  const handleFoodSelect = (food) => {
+  const handleFoodSelect = food => {
     setSelectedFood(food);
     setCalories(food.nutrients.ENERC_KCAL * (grams / 100));
   };
@@ -57,17 +55,24 @@ const CaloriesCalculator = () => {
   return (
     <>
       <div className="container">
-        <img src={logoDesk} alt="Logo" className="logo" />
+        <div className="logo"></div>
+        <div className="icon-hamburger"></div>
+        <div className="line-header"></div>
         <div className="linea"></div>
+        <div className="linea2"></div>
         <div className="buttons-container">
           <button
-            className={`diario page-button ${currentPage === 'diario' ? 'active' : ''}`}
+            className={`diario page-button ${
+              currentPage === 'diario' ? 'active' : ''
+            }`}
             onClick={() => handlePageChange('diario')}
           >
             DIARIO
           </button>
           <button
-            className={`calculadora page-button ${currentPage === 'calculadora' ? 'active' : ''}`}
+            className={`calculadora page-button ${
+              currentPage === 'calculadora' ? 'active' : ''
+            }`}
             onClick={() => handlePageChange('calculadora')}
           >
             CALCULADORA
@@ -82,12 +87,16 @@ const CaloriesCalculator = () => {
             >
               Comienza a perder peso
             </button>
-            <h1>Calcula tu ingesta diaria de calorías ahora mismo</h1>
+            <h1 className="text__title">
+              Calcula tu ingesta diaria de calorías ahora mismo
+            </h1>
             <form className="formulario">
               <div className="columna">
                 <label
                   htmlFor="altura"
-                  className={`formulario-label ${activeLabel === 'altura' ? 'formulario-label-clicked' : ''}`}
+                  className={`formulario-label ${
+                    activeLabel === 'altura' ? 'formulario-label-clicked' : ''
+                  }`}
                   onClick={() => handleInputChange('altura')}
                 >
                   Altura*
@@ -103,7 +112,9 @@ const CaloriesCalculator = () => {
 
                 <label
                   htmlFor="edad"
-                  className={`formulario-label ${activeLabel === 'edad' ? 'formulario-label-clicked' : ''}`}
+                  className={`formulario-label ${
+                    activeLabel === 'edad' ? 'formulario-label-clicked' : ''
+                  }`}
                   onClick={() => handleInputChange('edad')}
                 >
                   Edad*
@@ -119,7 +130,11 @@ const CaloriesCalculator = () => {
 
                 <label
                   htmlFor="pesoActual"
-                  className={`formulario-label ${activeLabel === 'pesoActual' ? 'formulario-label-clicked' : ''}`}
+                  className={`formulario-label ${
+                    activeLabel === 'pesoActual'
+                      ? 'formulario-label-clicked'
+                      : ''
+                  }`}
                   onClick={() => handleInputChange('pesoActual')}
                 >
                   Peso actual*
@@ -137,7 +152,11 @@ const CaloriesCalculator = () => {
               <div className="columna">
                 <label
                   htmlFor="pesoDeseado"
-                  className={`formulario-label ${activeLabel === 'pesoDeseado' ? 'formulario-label-clicked' : ''}`}
+                  className={`formulario-label ${
+                    activeLabel === 'pesoDeseado'
+                      ? 'formulario-label-clicked'
+                      : ''
+                  }`}
                   onClick={() => handleInputChange('pesoDeseado')}
                 >
                   Peso deseado*
@@ -190,12 +209,13 @@ const CaloriesCalculator = () => {
 
             <div>
               <input
+                className="input-none"
                 type="text"
                 placeholder="Buscar"
-                onChange={(e) => searchFoodEdamam(e.target.value)}
+                onChange={e => searchFoodEdamam(e.target.value)}
               />
               <ul>
-                {foodList.map((food) => (
+                {foodList.map(food => (
                   <li key={food.foodId} onClick={() => handleFoodSelect(food)}>
                     {food.label}
                   </li>
@@ -206,9 +226,12 @@ const CaloriesCalculator = () => {
                   <input
                     type="number"
                     value={grams}
-                    onChange={(e) => {
+                    onChange={e => {
                       setGrams(e.target.value);
-                      setCalories(selectedFood.nutrients.ENERC_KCAL * (e.target.value / 100));
+                      setCalories(
+                        selectedFood.nutrients.ENERC_KCAL *
+                          (e.target.value / 100)
+                      );
                     }}
                   />
                   <p>{`Calorías: ${calories}`}</p>
@@ -228,8 +251,11 @@ const CaloriesCalculator = () => {
       <div className="bloque2">
         <p className="userName">Nic</p>
         <button className="boton-salir">Salir</button>
+
         <div className="resumen">
-          <h2>Resumen para el <span id="fechaHoy">{currentDate}</span></h2>
+          <h2>
+            Resumen para el <span id="fechaHoy">{currentDate}</span>
+          </h2>
           <div className="resumen-item">
             <p>Consumido</p>
             <p className="valor">000 Kcal</p>
@@ -246,7 +272,7 @@ const CaloriesCalculator = () => {
 
         <h2 className="alimentos">Alimentos no recomendados</h2>
         <p className="dieta">Tu dieta se mostrará aquí</p>
-        <img src={leavesImage} alt="Logo" className="leaves" />
+        {/* <img src={leavesImage} alt="Logo" className="leaves" /> */}
       </div>
     </>
   );

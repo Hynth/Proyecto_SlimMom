@@ -5,10 +5,13 @@ body {
 
 .container {
   position: relative;
-  width: 1280px;
-  height: auto;
+  max-width: 1280px;
+  height: 0px;
   margin: 0 auto;
-  background-color: #f0f0f0;
+}
+
+.input-none {
+  display: none;
 }
 
 .logo {
@@ -17,11 +20,14 @@ body {
   top: 80px;
   width: 167px;
   height: 66px;
+  background-image: url(/src/images/logo-desk.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .linea {
   position: absolute;
-  width: 2px;
+  width: 3px;
   height: 32px;
   top: 121px;
   left: 201px;
@@ -61,7 +67,7 @@ body {
   border: none;
 }
 
-h1 {
+.text__title {
   position: absolute;
   top: 293px;
   left: 16px;
@@ -107,9 +113,10 @@ h1 {
   line-height: 17.01px;
   letter-spacing: 4%;
   border: none;
+  border-bottom: #9b9faa;
   outline: none;
   margin-bottom: 0px;
-  border-bottom: 1px solid #e0e0e0; /* Borde inferior para indicar separación */
+  border-bottom: 1px solid #e0e0e0;
   padding-top: 20px; /* Añadido espacio para mejorar la apariencia */
 }
 #edad {
@@ -205,10 +212,12 @@ h1 {
   position: absolute;
   left: 763px;
   overflow: hidden;
+  background-image: url(/src/images/Laves-calculator-desk.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .resumen {
-  background-color: #f0f0f0;
   padding: 0;
   margin: 20px;
   border-radius: 8px;
@@ -343,4 +352,137 @@ h1 {
   line-height: 17.01px;
   letter-spacing: 4%;
   outline: none; /* Evita el resaltado del botón al hacer clic */
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    max-width: 768px;
+  }
+  .logo {
+    top: 20px;
+    background-image: url(/src/images/logo-tablet.svg);
+  }
+
+  .diario {
+    display: none;
+  }
+  .calculadora {
+    display: none;
+  }
+  .bloque2 {
+    overflow: unset;
+    position: relative;
+    width: 768px;
+    margin: auto;
+    height: 326px;
+    left: 0;
+    top: 700px;
+    background-image: url(/src/images/laves-calculator-tablet.png);
+    background-position: right;
+    background-size: contain;
+  }
+  .userName {
+    position: relative;
+    right: -500px;
+    top: -670px;
+  }
+  .boton-salir {
+    position: relative;
+    right: -645px;
+    top: -699px;
+  }
+  .linea {
+    position: relative;
+    left: 635px;
+    top: 42px;
+  }
+  .icon-hamburger {
+    background-image: url(/src/images/icon-hamburger.svg);
+    width: 25px;
+    height: 25px;
+    top: 42px;
+    right: 5px;
+    position: absolute;
+  }
+  .line-header {
+    width: 100%;
+    border: 2px solid #f0f1f3;
+    position: absolute;
+    top: 100px;
+  }
+  .text__title {
+    width: 90%;
+    top: 180px;
+  }
+  .formulario {
+    top: 370px;
+    left: 18px;
+  }
+  .boton-comienza {
+    top: 610px;
+    left: 18px;
+  }
+  .resumen {
+    top: 50px;
+    left: 18px;
+  }
+  .alimentos {
+    top: 80px;
+    left: 430px;
+  }
+  .dieta {
+    top: 126px;
+    left: 430px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 375px;
+  }
+  .userName {
+    right: -185px;
+    top: -580px;
+  }
+  .linea {
+    top: 107px;
+    left: 315px;
+  }
+  .boton-salir {
+    right: -320px;
+    top: -610px;
+  }
+  .text__title {
+    font-size: 20px;
+    width: 280px;
+    line-height: 1.7rem;
+    top: 150px;
+  }
+  .formulario {
+    flex-direction: column;
+    top: 270px;
+  }
+  .boton-comienza {
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  .bloque2 {
+    width: auto;
+    top: 680px;
+    height: 360px;
+    background-image: none;
+  }
+  .resumen {
+    margin: 0;
+    left: 18px;
+  }
+  .alimentos {
+    left: 18px;
+    top: 220px;
+  }
+  .dieta {
+    left: 18px;
+    top: 260px;
+  }
 }
