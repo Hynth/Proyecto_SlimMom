@@ -12,21 +12,6 @@ body {
   display: none;
 }
 
-.formulario-label {
-	margin-top: 20px;
-	font-family: Verdana, sans-serif;
-	font-weight: 700;
-	font-size: 14px;
-	line-height: 17.01px;
-	letter-spacing: 4%;
-	color: #9b9faa;
-	display: block;
-}
-
-.formulario-label-clicked {
-	color: orange;
-}
-
 .userName {
   position: absolute;
   width: 122px;
