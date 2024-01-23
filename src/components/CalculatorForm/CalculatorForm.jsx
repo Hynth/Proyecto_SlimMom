@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import Modal from '../Modal/Modal'
 import styles from './CalculatorForm.module.css'
-import './../../css/stylesCalories.css'
 
 const CalculatorForm = () => {
 	const [activeLabel, setActiveLabel] = useState(null);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	const handleInputChange = labelFor => {
 		setActiveLabel(labelFor);
@@ -35,6 +36,20 @@ const CalculatorForm = () => {
 		},
 	});
 
+	useEffect(() => {
+		const handleKeyDown = (event) => {
+			if (event.key === 'Escape') {
+				setIsModalOpen(false);
+			}
+		};
+
+		document.addEventListener('keydown', handleKeyDown);
+
+		return () => {
+			document.removeEventListener('keydown', handleKeyDown);
+		};
+	}, []);
+
 	return (
 		<div className={styles.calculator}>
 			<h1 className={styles['calculator-title']}>
@@ -45,7 +60,7 @@ const CalculatorForm = () => {
 					<div className={styles.columna}>
 						<label
 							htmlFor="altura"
-							className={`formulario-label ${activeLabel === 'altura' ? 'formulario-label-clicked' : ''
+							className={`${styles['formulario-label']} ${activeLabel === 'altura' ? styles['formulario-label-clicked'] : ''
 								}`}
 							onClick={() => handleInputChange('altura')}
 						>
@@ -66,7 +81,7 @@ const CalculatorForm = () => {
 
 						<label
 							htmlFor="edad"
-							className={`formulario-label ${activeLabel === 'edad' ? 'formulario-label-clicked' : ''
+							className={`${styles['formulario-label']} ${activeLabel === 'edad' ? styles['formulario-label-clicked'] : ''
 								}`}
 							onClick={() => handleInputChange('edad')}
 						>
@@ -87,10 +102,8 @@ const CalculatorForm = () => {
 
 						<label
 							htmlFor="pesoActual"
-							className={`formulario-label ${activeLabel === 'pesoActual'
-								? 'formulario-label-clicked'
-								: ''
-								}`}
+							className={`${styles['formulario-label']} ${activeLabel === 'pesoActual'
+								? styles['formulario-label-clicked'] : ''	}`}
 							onClick={() => handleInputChange('pesoActual')}
 						>
 							Peso actual*
@@ -112,10 +125,8 @@ const CalculatorForm = () => {
 					<div className={styles.columna}>
 						<label
 							htmlFor="pesoDeseado"
-							className={`formulario-label ${activeLabel === 'pesoDeseado'
-								? 'formulario-label-clicked'
-								: ''
-								}`}
+							className={`${styles['formulario-label']} ${activeLabel === 'pesoDeseado'
+								? styles['formulario-label-clicked'] : '' }`}
 							onClick={() => handleInputChange('pesoDeseado')}
 						>
 							Peso deseado*
@@ -145,13 +156,14 @@ const CalculatorForm = () => {
 											defaultChecked={formik.values.grupoSanguineo === opcion}
 											onChange={() => formik.handleChange({ target: { name: 'grupoSanguineo', value: opcion } })}
 										/>
-										{formik.touched.grupoSanguineo && formik.errors.grupoSanguineo ? (
-											<div className={styles['required_input']}>{formik.errors.grupoSanguineo}</div>
-										) : null}
+										
 
 										<label htmlFor={opcion}>{opcion}</label>
 									</div>
 								))}
+								{formik.touched.grupoSanguineo && formik.errors.grupoSanguineo ? (
+									<div className={styles['required_input']}>{formik.errors.grupoSanguineo}</div>
+								) : null}
 							</div>
 					</div>
 				</div>
@@ -159,9 +171,11 @@ const CalculatorForm = () => {
 					<button
 						className={styles['start-button']}
 						type="submit"
+						onClick={() => setIsModalOpen(true)}
 					>
 						Comienza a perder peso
 					</button>
+					{isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
 				</div>
 			</form>
 		</div>
