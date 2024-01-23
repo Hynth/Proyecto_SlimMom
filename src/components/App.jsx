@@ -6,7 +6,7 @@ import LoginPage from '../pages/LoginPage';
 import DiaryPage from '../pages/DiaryPage';
 import Header from './Header/Header';
 import styles from './Header/Header.module.css'
-
+import CaloriesCalculator from '../calorieCalculator/caloriesCalculator.js'
 const App = () => {
   return (
     <div>
@@ -16,6 +16,7 @@ const App = () => {
 				<Route path="/register" element={<RegistrationPage />} />
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/diary" element={<DiaryPage />} />
+				<Route path="/CaloriesCalculator" element={<CaloriesCalculator/>}/>
 			</Routes>
     </div>
   );
