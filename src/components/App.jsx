@@ -5,18 +5,21 @@ import RegistrationPage from '../pages/RegistrationPage';
 import LoginPage from '../pages/LoginPage';
 import DiaryPage from '../pages/DiaryPage';
 import Header from './Header/Header';
-import styles from './Header/Header.module.css'
+import styles from './Header/Header.module.css';
+import {Home } from './Home/Home.jsx';
 
 const App = () => {
   return (
-    <div>
-			<Header/>
-			<Routes>
+	  <div><Home>
+		    <Routes>
 				<Route path="/" element={<MainPage />} />
 				<Route path="/register" element={<RegistrationPage />} />
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/diary" element={<DiaryPage />} />
-			</Routes>
+			</Routes>	
+	  </Home>
+		  
+		 
     </div>
   );
 };
