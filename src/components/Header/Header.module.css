@@ -42,6 +42,7 @@
 	padding: 10px;
 	margin: 10px;
 	background-color: #fff;
+	text-decoration: none;
 	border: none;
 	transition: all ease-in-out 250ms;
 }
@@ -52,12 +53,8 @@
 }
 
 .page-navigation.active {
-	color: #9b9faa;
-}
-
-/* .page-navigation:not(.active) {
 	color: #212121;
-} */
+}
 
 @media screen and (min-width: 426px) and (max-width: 1023px) {
 
