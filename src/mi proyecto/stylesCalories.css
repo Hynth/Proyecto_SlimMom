@@ -1,0 +1,277 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.input-none {
+  display: none;
+}
+
+.userName {
+  position: absolute;
+  width: 122px;
+  height: 12px;
+  top: 131px;
+  right: 106px;
+  font-family: Verdana, sans-serif;
+  font-weight: 700;
+  size: 14px;
+  line-height: 17.01px;
+  letter-spacing: 4%;
+  text-align: Right;
+}
+
+.boton-salir {
+  position: absolute;
+  width: 50px;
+  height: 12px;
+  top: 146px;
+  right: 16px;
+  font-family: Verdana, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17.01px;
+  letter-spacing: 4%;
+  color: #9b9faa;
+  background-color: transparent; /* Color de fondo transparente */
+  border: none; /* Sin borde */
+  cursor: pointer;
+}
+
+/* Estilos adicionales al hacer hover sobre el botón */
+.boton-salir:hover {
+  color: #fc842d; /* Cambia el color al hacer hover */
+}
+
+.bloque2 {
+  width: 517px;
+  height: 850px;
+  background-color: #f0f1f3;
+  position: absolute;
+  left: 763px;
+  overflow: hidden;
+  background-image: url(/src/images/Laves-calculator-desk.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.resumen {
+  padding: 0;
+  margin: 20px;
+  border-radius: 8px;
+  width: 288px;
+  height: 166px;
+  position: absolute;
+  top: 292px;
+  left: 106px;
+}
+
+.resumen h2 {
+  width: 288px;
+  height: 34px;
+  top: 292px;
+  left: 869px;
+  font-family: Verdana, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17.01px;
+  letter-spacing: 4%;
+  color: #212121;
+}
+
+.resumen-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-weight: 400;
+  font-family: Verdana, sans-serif;
+  color: #9b9faa;
+  line-height: 17px;
+  font-size: 14px;
+}
+
+.resumen-item p {
+  margin: 0;
+  font-family: Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17.01px;
+  letter-spacing: 4%;
+  align-items: Right;
+  color: #9b9faa;
+}
+
+.resumen-item .valor {
+  margin: 0;
+  font-family: Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17.01px;
+  letter-spacing: 4%;
+  text-align: Right;
+  color: #9b9faa;
+}
+
+.alimentos {
+  width: 288px;
+  height: 34px;
+  top: 518px;
+  left: 125px;
+  font-family: Verdana, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17.01px;
+  letter-spacing: 4%;
+  color: #212121;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
+
+.dieta {
+  width: 288px;
+  height: 112px;
+  top: 572px;
+  left: 125px;
+  font-family: Verdana, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17.01px;
+  letter-spacing: 4%;
+  color: #9b9faa;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
+
+.leaves {
+  width: 740px;
+  height: 842px;
+  top: 35px;
+  left: -200px;
+  position: absolute;
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .logo {
+    background-image: url(/src/images/logo-tablet.svg);
+  }
+
+  .page-navigation {
+    display: none;
+  }
+
+  .bloque2 {
+    overflow: unset;
+    position: relative;
+    width: 768px;
+    margin: auto;
+    height: 326px;
+    left: 0;
+    top: 700px;
+    background-image: url(/src/images/laves-calculator-tablet.png);
+    background-position: right;
+    background-size: contain;
+  }
+  .userName {
+    position: relative;
+    right: -500px;
+    top: -670px;
+  }
+  .boton-salir {
+    position: relative;
+    right: -645px;
+    top: -699px;
+  }
+
+  .icon-hamburger {
+    background-image: url(/src/images/icon-hamburger.svg);
+    width: 25px;
+    height: 25px;
+  }
+
+  .calculator-title {
+    width: 90%;
+    top: 180px;
+  }
+  .formulario {
+    top: 370px;
+    left: 18px;
+  }
+  .start-button {
+    top: 610px;
+    left: 18px;
+  }
+  .resumen {
+    top: 50px;
+    left: 18px;
+  }
+  .alimentos {
+    top: 80px;
+    left: 430px;
+  }
+  .dieta {
+    top: 126px;
+    left: 430px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 375px;
+  }
+  .userName {
+    right: -206px;
+    top: -771px;
+  }
+  .linea {
+    /* top: 107px; */
+    left: 270px;
+  }
+  .boton-salir {
+    right: -360px;
+    top: -800px;
+  }
+  .calculator-title {
+    font-size: 20px;
+    width: 280px;
+    line-height: 1.7rem;
+    top: 150px;
+  }
+  .formulario {
+    flex-direction: column;
+    /* top: 270px; */
+  }
+  .start-button {
+    /* left: 0;
+    right: 0; */
+    margin: auto;
+  }
+  .bloque2 {
+    width: auto;
+    top: 800px;
+    height: 360px;
+    background-image: none;
+  }
+  .resumen {
+    margin: 0;
+    left: 18px;
+  }
+  .alimentos {
+    left: 18px;
+    top: 220px;
+  }
+  .dieta {
+    left: 18px;
+    top: 260px;
+  }
+}

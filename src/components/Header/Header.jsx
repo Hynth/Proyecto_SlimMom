@@ -1,14 +1,9 @@
 import React, { useState }from 'react';
+import { Link } from "react-router-dom";
 import styles from './Header.module.css'
 import '../../css/stylesCalories.css';
 
-const Header = () => {
-	const [currentPage, setCurrentPage] = useState('diario');
-
-	const handlePageChange = page => {
-		setCurrentPage(page);
-	};
-
+const Header = ({ currentPage }) => {
 	return (
 		<div>
 			<div className={styles.header}>
@@ -18,20 +13,31 @@ const Header = () => {
 				<div className={styles.navigation}>
 					<div className={styles['icon-hamburger']}></div>
 					<div className={styles['buttons-container']}>
-						<button
-							className={styles['page-navigation']/* `page-navigation ${currentPage === 'diario' ? 'active' : ''
-						}`}
-						onClick={() => handlePageChange('diario') */}
-						>
-							INICIAR SESION
-						</button>
-						<button
-							className={styles['page-navigation']/* `page-navigation ${currentPage === 'calculadora' ? 'active' : ''
-						}`}
-						onClick={() => handlePageChange('calculadora') */}
-						>
-							REGISTRO
-						</button>
+						{(() => {
+							if (currentPage === 'Main' || currentPage === 'Register' || currentPage === 'Login') {
+								return (
+									<>
+										<Link to="/login" className={styles['page-navigation']}>
+											INICIAR SESION
+										</Link>
+										<Link to="/register" className={styles['page-navigation']}>
+											CREAR UNA CUENTA
+										</Link>
+									</>
+								);
+							} else {
+								return (
+									<>
+										<Link to="/diary" className={styles['page-navigation']}>
+											DIARIO
+										</Link>
+										<Link to="/calculator" className={styles['page-navigation']}>
+											CALCULADORA
+										</Link>
+									</>
+								);
+							}
+						})()}
 					</div>
 				</div>
 			</div>

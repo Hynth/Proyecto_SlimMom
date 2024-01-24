@@ -1,4 +1,5 @@
 import React, { useState }from 'react';
+import { Link } from "react-router-dom";
 import styles from './Modal.module.css'
 
 const Modal = ({ onClose }) => {
@@ -39,10 +40,10 @@ const Modal = ({ onClose }) => {
 				<div className={styles['button-container']}>
 					<button
 						className={styles['start-button']}
-						type="submit"
-						onClick={onClose}
-					>
+						type="submit">
+						<Link to="/register">
 						Comienza a perder peso
+						</Link>
 					</button>
 					{isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
 				</div>
