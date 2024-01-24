@@ -11,12 +11,7 @@ import CaloriesCalculator from './calorieCalculator/caloriesCalculator';
 const App = () => {
   return (
     <div>
-			<Routes>
-				<Route path="/" element={<MainPage />} />
-				<Route path="/register" element={<RegistrationPage />} />
-				<Route path="/login" element={<LoginPage />} />
-				<Route path="/diary" element={<DiaryPage />} />
-			</Routes>
+			<CaloriesCalculator/>
     </div>
   );
 };

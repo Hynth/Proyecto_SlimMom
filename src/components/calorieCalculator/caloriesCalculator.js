@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {useReactTable, getCoreRowModel, getPaginationRowModel, getSortedRowModel} from '@tanstack/react-table';
 import 'react-datetime/css/react-datetime.css';
-import logoDesk from '../../images/Vector-desk.svg';
+import logoDesk from '../../images/logo-desk.svg';
 import leavesImage from '../../images/Laves-calculator-desk.png';
 import './stylesCalories.css';
 
