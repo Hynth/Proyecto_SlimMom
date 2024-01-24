@@ -1,0 +1,89 @@
+.mainPage {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .mainPage {
+    padding: 100px 32px 398px;
+    background-image: url('../../images/laves-tablet.png'),
+      url('../../images/Strawberry-tablet.png'),
+      url('../../images/banana-tablet.png'),
+      url('../../images/Vector-tablet.svg');
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: bottom 0px left 0px, bottom 200px right 40px,
+      bottom 0px right 0px, bottom 0px right 0px;
+    background-size: auto, auto, auto, auto;
+  }
+
+  @media (min-resolution: 2dppx) {
+    .mainPage {
+      background-image: url('../../images/laves-tablet.png'),
+        url('../../images/Strawberry-tablet.png'),
+        url('../../images/banana-tablet.png'),
+        url('../../images/Vector-tablet.svg');
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+      background-position: bottom 0px left 0px, bottom 200px right 40px,
+        bottom 0px right 0px, bottom 0px right 0px;
+      background-size: 531px 553px, 208px 208px, 491px 431px, 494px 563px;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mainPage {
+     padding: 100px 0;
+    width: 100%;
+    max-height: 820px;
+    background-image: url('../../images/leaves-desk.png'),
+      url('../../images/Strawberry-desk.png'),
+      url('../../images/banana-desk.png'), url('../../images/Vector-desk.svg');
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: top 0px right 195px, top 506px right 30px,
+      top 0px right 0px, bottom -43px right 0px;
+    background-size: auto, auto, auto, 602px 816px;
+  }
+
+  @media (min-resolution: 2dppx) {
+    .mainPage {
+      background-image: url('../../images/leaves-desk.png'),
+        url('../../images/Strawberry-desk.png'),
+        url('../../images/banana-desk.png'), url('../../images/Vector-desk.svg');
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+      background-position: top 0px right 195px, top 526px right 50px,
+        top 0px right 0px, bottom -43px right 0px;
+      background-size: 746px 846px, 286px 279px, 498px 450px, 602px 816px;
+    }
+  }
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 34px;
+  color: black;
+}
+
+  @media (min-width: 426px) and (max-width: 1023px) {
+
+    h2 {
+  font-size: 34px;
+    line-height: 1.4;
+    margin-bottom: 68px;
+    max-width: 635px;
+    }
+  
+  }
+  @media (min-width: 1024px) {
+
+    h2 {
+    font-size: 34px;
+    line-height: 1.4;
+    margin-bottom: 68px;
+    max-width: 635px;
+    height: 85px; 
+    }
+    
+  }
+
