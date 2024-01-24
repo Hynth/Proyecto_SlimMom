@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../components/Header/Header';
 import CalculatorForm from '../components/CalculatorForm/CalculatorForm'
 
 const MainPage = () => {
-
 	return (
 		<div>
-			{/* <Header/> */}
-			<CalculatorForm/>
+			<Header currentPage={'Main'}/>
+			<CalculatorForm currentPage={'Main'} />
 		</div>
 	);
 }

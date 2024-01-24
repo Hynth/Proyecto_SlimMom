@@ -42,19 +42,21 @@
 	padding: 10px;
 	margin: 10px;
 	background-color: #fff;
+	text-decoration: none;
 	border: none;
 }
 
 .page-navigation:hover {
 	cursor: pointer;
+	color: #212121;
 }
 
 .page-navigation.active {
-	color: #9b9faa;
+	color: #212121;
 }
 
-.page-navigation:not(.active) {
-	color: #212121;
+.icon-hamburger {
+	
 }
 
 /* @media screen and (max-width: 1280px) {
