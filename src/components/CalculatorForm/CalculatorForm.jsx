@@ -32,6 +32,7 @@ const CalculatorForm = () => {
 		},
 		validationSchema: validationSchema,
 		onSubmit: (values) => {
+			setIsModalOpen(true);
 			console.log('Formulario enviado con éxito:', values);
 		},
 	});
@@ -171,7 +172,6 @@ const CalculatorForm = () => {
 					<button
 						className={styles['start-button']}
 						type="submit"
-						onClick={() => setIsModalOpen(true)}
 					>
 						Comienza a perder peso
 					</button>

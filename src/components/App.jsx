@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Route, Routes } from "react-router-dom";
-import MainPage from '../pages/MainPage';
+import Home from '../pages/Home/Home'
 import RegistrationPage from '../pages/RegistrationPage';
 import LoginPage from '../pages/LoginPage';
 import DiaryPage from '../pages/DiaryPage';
@@ -12,7 +12,7 @@ const App = () => {
 			<Routes>
 				<Route
 					path="/"
-					element={<MainPage />} />
+					element={<Home />} />
 				<Route
 					path="/register"
 					element={<RegistrationPage />} />
