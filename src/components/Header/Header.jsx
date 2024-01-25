@@ -1,7 +1,6 @@
 import React, { useState }from 'react';
 import { Link } from "react-router-dom";
 import styles from './Header.module.css'
-import '../../css/stylesCalories.css';
 
 const Header = ({ currentPage }) => {
 	return (
