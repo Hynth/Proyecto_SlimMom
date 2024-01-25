@@ -1,0 +1,105 @@
+.header {
+	max-width: 768px;
+	height: 100px;
+	display: flex;
+	padding: 0 10px;
+	justify-content: flex-start;
+}
+
+.logo-container {
+	width: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0px 30px 48px 30px;
+}
+
+.logo {
+	width: 167px;
+	height: 66px;
+	background-image: url(/src/images/logo-desk.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.navigation {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.buttons-container {
+	border-left: 2px solid #e0e0e0;
+}
+
+.page-navigation {
+	font-family: Verdana, sans-serif;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 17.01px;
+	letter-spacing: 4%;
+	color: #9b9faa;
+	padding: 10px;
+	margin: 10px;
+	background-color: #fff;
+	text-decoration: none;
+	border: none;
+	transition: all ease-in-out 250ms;
+}
+
+.page-navigation:hover {
+	cursor: pointer;
+	color: #FC842D;
+}
+
+.page-navigation.active {
+	color: #212121;
+}
+
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+
+	.header {
+border-bottom: 1px solid #E0E0E0;
+justify-content: space-between;
+align-items: center;
+	}
+
+	.logo-container {
+		padding: 0px 0px 40px 32px;
+	}
+
+	.header {
+		max-width: 768px;
+	}
+
+	.logo-container {
+		display: flex;
+		padding: 0px 20px 38px 0px;
+	}
+
+	.buttons-container {
+	display: flex;
+	}
+
+  }
+
+  @media screen and (max-width: 425px) {
+	
+	.header {
+		max-width: 320px;
+	}
+
+	.logo {
+		width: 30px;
+		background-image: url(/src/images/logo-mobile.svg);
+	}
+
+	.logo-container {
+		padding: 20px;
+	}
+
+	.buttons-container {
+	display: flex;
+	}
+	
+  }
