@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Modal from '../Modal/Modal'
-import styles from './CalculatorForm.module.css'
+import styles from './CaloriesCalculatorForm.module.css'
 
-const CalculatorForm = () => {
+const CaloriesCalculatorForm = () => {
 	const [activeLabel, setActiveLabel] = useState(null);
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -175,11 +175,11 @@ const CalculatorForm = () => {
 					>
 						Comienza a perder peso
 					</button>
-					{isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
+					{isModalOpen && <Modal values={formik.values} onClose={() => setIsModalOpen(false)} />}
 				</div>
 			</form>
 		</div>
 	);
 }
 
-export default CalculatorForm;
+export default CaloriesCalculatorForm;
