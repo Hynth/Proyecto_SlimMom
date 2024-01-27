@@ -15,7 +15,7 @@ export default defineConfig(({ command }) => {
       outDir: '../dist',
       rollupOptions: {
         input: {
-          main: './calorieCalculator/index.jsx',
+          main: './index.js',
         },
         output: {
           manualChunks(id) {
