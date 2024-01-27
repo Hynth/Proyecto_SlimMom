@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "react-scripts start",
-    "dev": "babel-node src/calorieCalculator/start.cjs",
+    "dev": "babel-node src/index.js",
     "build": "vite build --base=/vanilla-app-template/",
     "preview": "vite preview"
   },
