@@ -1,13 +1,13 @@
 // App.jsx
 import React from 'react';
-import { AuthProvider } from '../context/AuthProvider';
+import { AuthProvider } from './context/AuthProvider';
 import { Routes, Route } from 'react-router-dom';
-import Home from '../pages/Home/Home';
-import RegistrationPage from '../pages/RegisterPage';
-import LoginPage from '../pages/LoginPage';
-import DiaryPage from '../pages/DiaryPage';
-import CalculatorPage from '../pages/CalculatorPage';
-import { auth } from '../firebase/firebase';
+import Home from './pages/Home/Home';
+import RegistrationPage from './pages/RegisterPage';
+import LoginPage from './pages/LoginPage';
+import DiaryPage from './pages/DiaryPage';
+import CalculatorPage from './pages/CalculatorPage';
+import { auth } from './firebase/firebase';
 
 const App = () => {
   return (
@@ -26,7 +26,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
